@@ -13,6 +13,7 @@ namespace BookStore
     {
         public static void Main(string[] args)
         {
+            // Run 'CreateHostBuilder' method which returns an IHostBuilder object.
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -20,6 +21,8 @@ namespace BookStore
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // Create 'Host' using the 'Startup' class.
+                    // Host is an object used to encapsulate all resources and assets for the application
                     webBuilder.UseStartup<Startup>();
                 });
     }
