@@ -19,11 +19,11 @@ namespace BookStore.Repository
         }
         private List<BookModel> DataSource() {
             return new List<BookModel>() {
-                new BookModel(){ Id=1, Title="MVC", Author="Julius" },
-                new BookModel(){ Id=2, Title="Java", Author="Gillian" },
-                new BookModel(){ Id=3, Title="Java", Author="Joel" },
-                new BookModel(){ Id=4, Title="PHP", Author="Yang" },
-                new BookModel(){ Id=5, Title="PHP", Author="Cole" }
+                new BookModel(){ Id=1, Title="Angular", Author="Julius Macrohon", Description="Managing user experience design of Athena at the University of Auckland.", Category="Front End Development", Pages=69, Language="English"},
+                new BookModel(){ Id=2, Title="Spring Boot", Author="Gillian Ng", Description="Building and migrating new API's to updated cloud server.", Category="Back End Development", Pages=420, Language="Chinese"},
+                new BookModel(){ Id=3, Title="Java", Author="Joel Clarke", Description="Printing service management allocating independent departmental control", Category="Back End Security", Pages=999, Language="English"},
+                new BookModel(){ Id=4, Title="Angular & Ionic", Author="Yang Cui", Description="Grade conversion for international applicants.", Category="Full Stack Development", Pages=12345, Language="Chinese"},
+                new BookModel(){ Id=5, Title="Angular & Ionic", Author="Cole Maguire", Description="I forgot what Cole was doing but he has a nice beard. sPrInGbEuAt", Category="Full Stack Development", Pages=0, Language="English"}
             };
         }
     }

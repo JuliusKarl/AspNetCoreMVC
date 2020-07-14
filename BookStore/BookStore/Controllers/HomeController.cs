@@ -9,6 +9,7 @@ namespace BookStore.Controllers
     public class HomeController : Controller
     {
         public ViewResult Index() {
+            ViewBag.Title = "Book Store";
             return View();
         }
         public ViewResult AboutUs()
