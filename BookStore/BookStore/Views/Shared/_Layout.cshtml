@@ -4,8 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewData["Title"] | Book Store</title>
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
-    <link href="~/css/Style.css" rel="stylesheet" />
+    <environment include="Development">
+        <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/css/Style.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        @*<link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />*@
+        <link rel="stylesheet"
+              href="http://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/twitter-bootstrap/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute"
+              crossorigin="anonymous">
+        <link href="~/css/Style.css" rel="stylesheet" />
+    </environment>
 </head>
 <body>
     <header>
@@ -18,16 +31,22 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link" href="/">Home</a>
+                            <a class="nav-link" asp-action="index" asp-controller="home">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home/aboutus">About</a>
+                            <a class="nav-link" asp-action="aboutus" asp-controller="home">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/home/contactus">Contact</a>
+                            <a class="nav-link" asp-action="contactus" asp-controller="home">Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/book/getallbooks">All Books</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Book Options
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="nav-link" asp-action="getallbooks" asp-controller="book">All Books</a>
+                                <a class="nav-link" asp-action="addnewbook" asp-controller="book">Add New</a>
+                            </div>
                         </li>
                     </ul>
                     <ul class="navbar-nav">
