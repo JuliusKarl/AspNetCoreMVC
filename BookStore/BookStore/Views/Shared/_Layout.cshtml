@@ -66,11 +66,18 @@
 
     <footer class="border-top footer text-muted text-center">
         <small>COPYRIGHT &copy; BOOKSTORE APPLICATION @DateTime.Now.Year <i>JKMACRO</i> and <i>MACROMEDIA</i> DEVELOPMENT AND PUBLISHING</small>
+        <custom-email my-email="Email"></custom-email>
     </footer>
 
     <!-- Shared Javascript libraries -->
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/twitter-bootstrap/js/bootstrap.js"></script>
+
+    <environment includes="Development">
+        <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+        <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.js"></script>
+    </environment>
 
     <!-- Unique Scripts injected by specific view -->
     @RenderSection("scripts", required: false)
